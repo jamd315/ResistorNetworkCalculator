@@ -57,5 +57,4 @@ def make_svg(network):
 
 if __name__ == "__main__":
     app.resistor_calc = ResistorNetworkDatabaseManager()
-    print(sys.getsizeof(app.resistor_calc.networks["e24o6"][3.0]))
-    #app.run("0.0.0.0", 80, debug=True)
+    app.run("0.0.0.0", 80, debug=True)

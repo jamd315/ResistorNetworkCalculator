@@ -1,6 +1,7 @@
 *.txt
 *.bin
 *.db
+*.npy
 
 
 # Python

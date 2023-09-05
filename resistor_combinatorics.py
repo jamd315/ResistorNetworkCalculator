@@ -9,6 +9,7 @@ import sys
 import time
 
 import tqdm
+import numpy as np
 
 from ResistorNetwork import ResistorNetwork, ResistorNetworkType
 from ResistorNetworkDatabaseManager import ResistorNetworkDatabaseManager
@@ -94,20 +95,14 @@ def generate_database_files():
                 r2, o2 = ResistorNetwork.encode_resistance(network.resistors[1])
                 r3, o3 = ResistorNetwork.encode_resistance(network.resistors[2])
                 c.execute("INSERT INTO resistor_networks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", (resistance, series_name_full, network.configuration.value, r1, o1, r2, o2, r3, o3))
-            print(f"{series_name_full} db done")
-            with open(f"{series_name_full}.txt", "w") as f:
-                f.write(",".join(str(x) for x in sorted(combos.keys())))
-            print(f"{series_name_full} txt done")
+            arr = np.array(sorted(combos.keys()))
+            np.save(f"{series_name_full}.npy", arr)
+            print(f"{series_name_full} done")
     conn.commit()
-                
 
 
 def main():
-    a = ResistorNetworkDatabaseManager()
-    t1 = time.perf_counter()
-    network = a.nearest_network(414, "e24o6")
-    t2 = time.perf_counter()
-    print(f"Found {network} in {t2 - t1} seconds")
+    generate_database_files()
 
 
 if __name__ == '__main__':
