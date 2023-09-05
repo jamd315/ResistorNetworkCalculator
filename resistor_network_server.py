@@ -4,7 +4,8 @@ import flask
 from flask import request, current_app
 from markupsafe import Markup
 
-from resistor_combos import ResistorNetwork
+from ResistorNetwork import ResistorNetwork
+from ResistorNetworkDatabaseManager import ResistorNetworkDatabaseManager
 
 app = flask.Flask(__name__)
 
@@ -23,37 +24,6 @@ def utility_processor():
     return {
         "pretty_resistance": pretty_resistance
     }
-
-
-class ResistorCalc:
-    def __init__(self):
-        self.networks = {
-            "e6o3": self._load("e6o3.bin"),
-            "e6o6": self._load("e6o6.bin"),
-            "e12o3": self._load("e12o3.bin"),
-            "e12o6": self._load("e12o6.bin"),
-            "e24o3": self._load("e24o3.bin"),
-            "e24o6": self._load("e24o6.bin"),
-        }
-
-    def _load(self, filename) -> dict:
-        d = {}
-        with open(filename, "rb") as f:
-            struct_size = ResistorNetwork.struct_size()
-            while True:
-                data = f.read(struct_size)
-                if not data:
-                    break
-                network = ResistorNetwork.decode(data)
-                d.update({network.resistance: network})
-        return d
-    
-    def nearest_network(self, resistance: float, series_name: str) -> ResistorNetwork:
-        if series_name not in self.networks:
-            raise ValueError(f"Invalid series name: {series_name}")
-        network = self.networks[series_name]
-        # Naive approach
-        return network[min(network.keys(), key=lambda x: abs(x - resistance))]
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -86,6 +56,6 @@ def make_svg(network):
 
 
 if __name__ == "__main__":
-    app.resistor_calc = ResistorCalc()
+    app.resistor_calc = ResistorNetworkDatabaseManager()
     print(sys.getsizeof(app.resistor_calc.networks["e24o6"][3.0]))
     #app.run("0.0.0.0", 80, debug=True)
