@@ -5,6 +5,7 @@ from markupsafe import Markup
 from ResistorNetworkDatabaseManager import ResistorNetworkDatabaseManager
 
 app = flask.Flask(__name__)
+app.resistor_calc = ResistorNetworkDatabaseManager()
 
 
 def pretty_resistance(resistance: float) -> str:
@@ -31,8 +32,8 @@ def index():
             return flask.abort(400)
         series_name = request.form["series_name"]
         network = current_app.resistor_calc.nearest_network(float(resistance), series_name)
-        return flask.render_template("index.html", 
-                                     network=network, 
+        return flask.render_template("index.html",
+                                     network=network,
                                      resistance=resistance,
                                      svg=Markup(make_svg(network)))
     return flask.render_template("index.html")
@@ -53,5 +54,4 @@ def make_svg(network):
 
 
 if __name__ == "__main__":
-    app.resistor_calc = ResistorNetworkDatabaseManager()
     app.run("0.0.0.0", 80)

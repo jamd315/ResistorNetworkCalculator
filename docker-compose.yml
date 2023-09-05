@@ -1,0 +1,19 @@
+version: "3"
+services:
+  resistornetworkcalculator:
+    build: .
+    container_name: ResistorNetworkCalculator
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.resistornetworkcalculator.rule=Host(`resistors.lizardswimmer.com`)"
+      - "traefik.http.services.resistornetworkcalculator.loadbalancer.server.port=80"
+      - "traefik.http.routers.resistornetworkcalculator.entrypoints=websecure"
+      - "traefik.http.routers.resistornetworkcalculator.tls.certresolver=letsencryptresolver"
+    networks:
+      - web
+    restart: always
+
+
+networks:
+  web:
+    external: true
