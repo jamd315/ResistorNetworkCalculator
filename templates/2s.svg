@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50mm"
+   height="50mm"
+   viewBox="0 0 49.999993 49.999993"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="2s.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="3.175"
+     inkscape:cx="105.35433"
+     inkscape:cy="98.740157"
+     inkscape:window-width="1920"
+     inkscape:window-height="1129"
+     inkscape:window-x="-8"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid2"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="0.99999998"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <rect
+       x="98.267731"
+       y="37.795281"
+       width="52.913394"
+       height="30.236225"
+       id="rect10" />
+    <rect
+       x="105.82679"
+       y="37.795281"
+       width="64.251978"
+       height="30.236225"
+       id="rect9" />
+    <rect
+       x="143.62207"
+       y="113.38584"
+       width="52.913366"
+       height="18.90437"
+       id="rect8" />
+    <rect
+       x="68.031506"
+       y="113.38584"
+       width="52.913395"
+       height="18.897646"
+       id="rect7" />
+    <rect
+       x="68.031509"
+       y="113.38584"
+       width="52.913395"
+       height="18.897646"
+       id="rect7-0" />
+    <rect
+       x="68.031509"
+       y="113.38584"
+       width="52.913395"
+       height="18.897646"
+       id="rect7-1" />
+    <rect
+       x="68.031509"
+       y="113.38584"
+       width="52.913395"
+       height="18.897646"
+       id="rect7-0-9" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#000000;stroke-width:0.264999;stroke-dasharray:none"
+       id="path2"
+       cx="5.000001"
+       cy="25.000004"
+       r="1"
+       inkscape:label="top" />
+    <circle
+       style="fill:#000000;stroke-width:0.264999;stroke-dasharray:none"
+       id="path2-9"
+       cx="45.000008"
+       cy="25.000004"
+       r="1"
+       inkscape:label="bottom" />
+    <g
+       id="g10-2"
+       inkscape:label="r2"
+       transform="rotate(90,20.007903,31.00773)">
+      <path
+         d="m 14.000176,25.015629 v 3.968749 l 1.32292,0.66146 -2.64584,1.32292 2.64584,1.32291 -2.64584,1.32292 2.64584,1.32292 -2.64584,1.322913 1.32292,0.66146 v 3.96875"
+         stroke="#000000"
+         stroke-width="0.264583"
+         stroke-linejoin="bevel"
+         fill="none"
+         id="path1-8-1"
+         style="stroke-width:0.265;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0,-0.26458333,0.26458333,0,-13.968109,57.372212)"
+         id="text7-5"
+         style="white-space:pre;shape-inside:url(#rect7-0);display:inline;fill:#000000;stroke:#000000;stroke-width:1.00157;stroke-dasharray:none"><tspan
+           x="68.03125"
+           y="124.33468"
+           id="tspan5"><tspan
+             style="font-family:Consolas;-inkscape-font-specification:Consolas"
+             id="tspan1">{{ r1 }}</tspan></tspan></text>
+    </g>
+    <g
+       id="g10-2-5"
+       inkscape:label="r2"
+       transform="rotate(90,27.945404,38.945231)">
+      <path
+         d="m 14.000176,25.015629 v 3.968749 l 1.32292,0.66146 -2.64584,1.32292 2.64584,1.32291 -2.64584,1.32292 2.64584,1.32292 -2.64584,1.322913 1.32292,0.66146 v 3.96875"
+         stroke="#000000"
+         stroke-width="0.264583"
+         stroke-linejoin="bevel"
+         fill="none"
+         id="path1-8-1-3"
+         style="stroke-width:0.265;stroke-dasharray:none" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0,-0.26458333,0.26458333,0,-13.968109,57.372212)"
+         id="text7-5-9"
+         style="white-space:pre;shape-inside:url(#rect7-0-9);display:inline;fill:#000000;stroke:#000000;stroke-width:1.00157;stroke-dasharray:none"><tspan
+           x="68.03125"
+           y="124.33468"
+           id="tspan8"><tspan
+             style="font-family:Consolas;-inkscape-font-specification:Consolas"
+             id="tspan6">{{ r2 }}</tspan></tspan></text>
+    </g>
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.264999;stroke-dasharray:none"
+       d="m 41.875006,25.000003 h 3.125001"
+       id="path14" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:0.264999;stroke-dasharray:none"
+       d="M 10.125002,25.000003 H 5.0000008"
+       id="path15" />
+  </g>
+</svg>
