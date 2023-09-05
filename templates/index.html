@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resistance Networks</title>
+    <title>Resistor Network Calculator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <h1>Resistance Calculator</h1>
-    <p>Please enter the desired resistance value:</p>
-    
-    <form action="/" method="post">
-        <label for="series_name">Select a resistor series:</label>
-        <select id="series_name" name="series_name">
-            <option value="e6o3">E6 series under 1kΩ</option>
-            <option value="e6o6">E6 series under 1MΩ</option>
-            <option value="e12o3">E12 series under 1kΩ</option>
-            <option value="e12o6">E12 series under 1MΩ</option>
-            <option value="e24o3">E24 series under 1kΩ</option>
-            <option value="e24o6">E24 series under 1MΩ</option>
-        </select>
-        <br/>
-        <label for="resistance">Resistance (in ohms):</label>
-        <input type="number" step="0.001" id="resistance" name="resistance" required>
-        <br/>
-        <input type="submit" value="Calculate">
-    </form>
-    {% if network is defined %}
-    <p>Found a solution that yields {{ network.resistance }}Ω, which is {{ ((network.resistance - resistance) / resistance * 100)|round(2) }}% off of {{ resistance }}Ω</p>
-    <p>R1={{ pretty_resistance(network.resistors[0]) }}, R2={{ pretty_resistance(network.resistors[1]) }}, R3={{ pretty_resistance(network.resistors[2]) }} in a {{ network.configuration_name() }} configuration.</p>
-    {{ svg }}
-    {% endif %}
+    <div>
+        <h1>Resistor Network Calculator</h1>
+        <p>Please enter the desired resistance value:</p>
+
+        <form action="/" method="post">
+            <label for="series_name">Select a resistor series:</label>
+            <select id="series_name" name="series_name">
+                <option value="e6o3">E6 series under 1kΩ</option>
+                <option value="e6o6">E6 series under 1MΩ</option>
+                <option value="e12o3">E12 series under 1kΩ</option>
+                <option value="e12o6">E12 series under 1MΩ</option>
+                <option value="e24o3">E24 series under 1kΩ</option>
+                <option value="e24o6">E24 series under 1MΩ</option>
+            </select>
+            <br/>
+            <label for="resistance">Resistance (in ohms):</label>
+            <input type="number" step="0.001" id="resistance" name="resistance" required>
+            <br/>
+            <input type="submit" value="Calculate">
+        </form>
+        {% if network is defined %}
+        <p>Found a solution that yields {{ network.resistance|round(2) }}Ω, which is {{ ((network.resistance - resistance) / resistance * 100)|round(2) }}% off of {{ resistance }}Ω</p>
+        <p>R1={{ pretty_resistance(network.resistors[0]) }}, R2={{ pretty_resistance(network.resistors[1]) }}, R3={{ pretty_resistance(network.resistors[2]) }} in a {{ network.configuration_name() }} configuration.</p>
+        {{ svg }}
+        {% endif %}
+    </div>
 </body>
 </html>

@@ -12,11 +12,11 @@ app = flask.Flask(__name__)
 
 def pretty_resistance(resistance: float) -> str:
     if resistance >= 1e6:
-        return f"{resistance / 1e6:.2f}MΩ"
+        return f"{resistance / 1e6:.1f}MΩ"
     elif resistance >= 1e3:
-        return f"{resistance / 1e3:.2f}kΩ"
+        return f"{resistance / 1e3:.1f}kΩ"
     else:
-        return f"{resistance:.2f}Ω"
+        return f"{resistance:.1f}Ω"
 
 # Let flask use this function
 @app.context_processor
@@ -57,4 +57,4 @@ def make_svg(network):
 
 if __name__ == "__main__":
     app.resistor_calc = ResistorNetworkDatabaseManager()
-    app.run("0.0.0.0", 80, debug=True)
+    app.run("0.0.0.0", 80)
