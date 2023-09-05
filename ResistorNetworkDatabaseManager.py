@@ -45,7 +45,7 @@ def main():
     t0 = time.perf_counter()
     a = ResistorNetworkDatabaseManager()
     t1 = time.perf_counter()
-    network = a.nearest_network(666666, "e24o6")
+    network = a.nearest_network(414.14, "e24o6")
     t2 = time.perf_counter()
     print(f"Loaded in {t1 - t0}s, found {network}={network.resistance} in {t2 - t1}s")
 

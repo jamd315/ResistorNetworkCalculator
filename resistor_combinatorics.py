@@ -1,14 +1,8 @@
 import math
 import itertools
-from dataclasses import dataclass
 from typing import Dict
-import struct
-from enum import Enum
 import sqlite3
-import sys
-import time
 
-import tqdm
 import numpy as np
 
 from ResistorNetwork import ResistorNetwork, ResistorNetworkType
@@ -65,21 +59,6 @@ def predict_combinatorics_len(num_resistors):
     return result
 
 
-def save_combos(combos, filename):
-    with open(filename, "wb") as f:
-        for network in combos.values():
-            f.write(network.encode())
-        
-
-def generate_binaries():
-    for series_name, series in tqdm.tqdm([("E6", E6), ("E12", E12), ("E24", E24)]):
-        for order in [3, 6]:
-            resistor_values = generate_resistor_values(series, order)
-            combos = apply_combinatorics(resistor_values)
-            print(f"{series_name} {order} order: {len(combos)} combos")
-            save_combos(combos, f"{series_name.lower()}o{order}.bin")
-
-
 def generate_database_files():
     conn = sqlite3.connect("resistor_networks.db")
     c = conn.cursor()
@@ -102,6 +81,7 @@ def generate_database_files():
 
 
 def main():
+    print("Building database files, this might take a while...")
     generate_database_files()
 
 

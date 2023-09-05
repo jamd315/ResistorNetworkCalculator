@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 import math
-import struct
 from enum import Enum
 
 
@@ -46,26 +45,6 @@ class ResistorNetwork:
     
     def configuration_name(self) -> str:
         return self.resistor_network_type_friendly_names[self.configuration]
-    
-    def encode(self):
-        struct_fmt = "@fBBBBBBB"  # 11 bytes per
-        r1, o1 = self.encode_resistance(self.resistors[0])
-        r2, o2 = self.encode_resistance(self.resistors[1])
-        r3, o3 = self.encode_resistance(self.resistors[2])
-        return struct.pack(struct_fmt, self.resistance, self.configuration.value, r1, o1, r2, o2, r3, o3)
-    
-    @classmethod
-    def decode(cls, data):
-        struct_fmt = "@fBBBBBBB"  # 11 bytes per
-        resistance, configuration, r1, o1, r2, o2, r3, o3 = struct.unpack(struct_fmt, data)
-        configuration = ResistorNetworkType(configuration)
-        resistors = (cls.decode_resistance(r1, o1), cls.decode_resistance(r2, o2), cls.decode_resistance(r3, o3))
-        return cls(configuration, resistors)
-    
-    @staticmethod
-    def struct_size():
-        return struct.calcsize("@fBBBBBBB")
-    
     
     # Encode a resistance into its value and order of magnitude
     # The resistance is really 10 times the normal resistance, so that we can use integers

@@ -1,10 +1,7 @@
-import sys
-
 import flask
 from flask import request, current_app
 from markupsafe import Markup
 
-from ResistorNetwork import ResistorNetwork
 from ResistorNetworkDatabaseManager import ResistorNetworkDatabaseManager
 
 app = flask.Flask(__name__)
